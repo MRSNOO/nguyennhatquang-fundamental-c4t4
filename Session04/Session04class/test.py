@@ -17,8 +17,8 @@
 
 # food = menu[-1]
 # print(food)
-# for i in range (len(menu)):
-#     print(menu[i])
+for i in range (len(menu)):
+     print(menu[i])
 
 # for index, item in enumerate(menu):
 #     print(index,item)
@@ -26,15 +26,15 @@
 #     print(item)
 menu=["death note", "netflix","teaching","cooking","eating","sleeping"]
 # print("*"*50)
-# for index,item in enumerate(menu):
-#     print(index+1,item,sep=". ")
+ for index,item in enumerate(menu):
+     print(index+1,item,sep=". ")
 # print("*"*50)
 # vitri=int(input("Position want to replace"))
 # fav= input("Your favorite replace:")
 # menu[vitri-1]=fav
 # print("*"*50)
-# for index,item in enumerate(menu):
-#     print(index+1,item,sep=". ")
+ for index,item in enumerate(menu):
+     print(index+1,item,sep=". ")
 # print("*"*50)      
 # menu.remove("death note")
 # a = menu.pop(1)
