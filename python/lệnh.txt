@@ -1,0 +1,51 @@
+Lesson1:
+dir : xem tat ca folder
+cd: chuyen den folder
+cd .. : back lai folder
+cd tab : auto tim 1 folder
+cls : clear 
+python
+" " : string
+input nhap roi cho enter
+ctrl / 
+
+Lesson 2:
+for i in range(0,stop,1)
+for i in range(start,stop,1): (khong co stop) 
+for i in range(start,stop,step) : (step = cong boi)
+vi du range (2,8,3) ->2,5 (khong co 8 )
+i la interator con ch?y 
+print() cach 
+end="" lam cho print ko xuong dong 
+end=" " cach 
+
+Lesson 3:
+"{ }   " = .format(" ")
+ko dat ten bien bang chu viet hoa 
+break : pha vong lap gan nhat 
+
+Lesson 4:
+New data types 
+C R U D 
+C : create
+R:Read 
+U: update
+D: delete
+len(list) : phan tu 
+
+Lesson 5:
+
+GAME: Sokoban
+map  player   boxes  destinations
+
+map : dictionary
+
+player : dictionary
+
+boxes : list cac dictionary
+
+destinations : list
+
+
+
+
