@@ -2,6 +2,34 @@ from flask import Flask,redirect,url_for
 
 newapp = Flask(__name__)
 
+
+
+Users = {
+        'huy' :         {
+                'name' : 'Nguyen Quang Huy',
+                'age' : 29
+        },
+        'don' : {
+                "name" : 'Don zoombie',
+                'age' : 23
+        },
+        'quang' : {
+                'name' : "Nguyen Nhat Quang",
+                'age' : 17
+        }
+    }
+def user_profile(username,Users):
+    return_informations= ""
+    if username in Users:
+        for profile in Users[username]:
+            return_informations += str(profile)
+            return_informations += ":"
+            return_informations += str(Users[username][profile])
+            return_informations += "<br/>"
+        return return_informations    
+    else:
+        return None    
+
 @newapp.route("/")
 def index():
     return "Hello C4T4, this is homepage"
@@ -24,11 +52,12 @@ def personal():
               I like reading, playing games, playing sport and coding.
             """ 
 @newapp.route("/user/<username>")
-def user(username):
-    if username == "Quang":
-        return redirect("http://127.0.0.1:5000/personal")
-    else :
-        return "User not found"
+def profile(username):
+    printing=user_profile(username,Users)
+    if printing is not None:
+        return printing
+    else:
+        return "User not found"   
 
 
 if __name__ == "__main__":
