@@ -12,6 +12,6 @@ def calc(x, y, ran_op):
     return res
 
 # call function
-result = calc(8,9,"+")
-print(result)
+# result = calc(8,9,"+")
+# print(result)
 

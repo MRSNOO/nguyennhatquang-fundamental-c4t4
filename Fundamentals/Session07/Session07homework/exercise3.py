@@ -6,4 +6,5 @@ def draw_square(length,color1):
         forward(length)
 
 
+
 mainloop()

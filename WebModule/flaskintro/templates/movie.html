@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Movies List</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script>
+</head>
+<body>
+    {% for movie in movies %} <!-- chọn 1 cái movie trong movies-->
+        <h1>{{movie.title}}</h1>
+        <h2>{{movie.casts}}</h2>
+        <img src = "{{movie.thumbnail_url}}">
+        <br/>
+        <a href = "{{movie.ref_link}}">The film of the year</a>
+    {% endfor %}
+</body>
+</html>

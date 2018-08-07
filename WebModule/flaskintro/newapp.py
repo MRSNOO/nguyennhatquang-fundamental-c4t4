@@ -53,7 +53,7 @@ def personal():
             """ 
 @newapp.route("/user/<username>")
 def profile(username):
-    printing=user_profile(username,Users)
+    printing = user_profile(username,Users)
     if printing is not None:
         return printing
     else:

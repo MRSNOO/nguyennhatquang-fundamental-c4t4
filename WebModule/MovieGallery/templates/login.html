@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Login</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="..\static\index.css">
+    <link rel="stylesheet" href="..\static\tk-wd.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <script src="main.js"></script>
+</head>
+<body class = "d-flex just-cont space">
+    <div class = "d-flex w-500px h-400px bg just-cont space">
+        <div>   
+            <div class ="d-flex padding-10px just-cont space size-1_5 ">Sign in </div>
+            <div class ="d-flex"><form action="" method="POST">
+                    <div class ="d-flex just-cont space block">
+                        <div class = "padding-10px"><b><label for="">Username</label></b></div>
+                        <input type="text" placeholder="Username"></div>
+                    <div  class ="d-flex just-cont space block">
+                            <div class = "padding-10px"><b><label for="">Password</label></b></div>
+                        <input type="password" placeholder="Password"></div>
+                    
+                    <div class ="d-flex padding-10px space_between">
+                        <p class = "d-flex padding-10px size-0_9">Forgot Password?</p>
+                        <div class = "d-flex padding-10px"><button type="button" class="btn btn-primary">Login</button></div> </div>
+                </form>
+            </div> 
+                {% for mess in get_flashed_messages() %}
+                    <div>{{mess}}</div>
+                {% endfor %}
+
+
+
+
+        </div>           
+    </div>
+    
+</body>
+</html>
