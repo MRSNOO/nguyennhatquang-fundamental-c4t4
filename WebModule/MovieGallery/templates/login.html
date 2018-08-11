@@ -19,14 +19,14 @@
             <div class ="d-flex"><form action="" method="POST">
                     <div class ="d-flex just-cont space block">
                         <div class = "padding-10px"><b><label for="">Username</label></b></div>
-                        <input type="text" placeholder="Username"></div>
+                        <input type="text" placeholder="Username" name="username"></div>
                     <div  class ="d-flex just-cont space block">
                             <div class = "padding-10px"><b><label for="">Password</label></b></div>
-                        <input type="password" placeholder="Password"></div>
+                        <input type="password" placeholder="Password" name="password"></div>
                     
                     <div class ="d-flex padding-10px space_between">
                         <p class = "d-flex padding-10px size-0_9">Forgot Password?</p>
-                        <div class = "d-flex padding-10px"><button type="button" class="btn btn-primary">Login</button></div> </div>
+                        <div class = "d-flex padding-10px"><button type="submit" class="btn btn-primary">Login</button></div> </div>
                 </form>
             </div> 
                 {% for mess in get_flashed_messages() %}
