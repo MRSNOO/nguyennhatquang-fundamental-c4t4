@@ -14,27 +14,26 @@ while playing :
             if x==player["x"] and y == player["y"]:
                 player_is_here = True
 
-            box_is_here = False
-            for box in boxes : 
-                if x == box["x"] and y == box["y"]:
-                    box_is_here = True
+            box_is_here = False 
+            if x == boxes["x"] and y == boxes["y"]:
+                box_is_here = True
             
             storage_is_here = False
-            for storage in storages : 
-                if x == storage["x"] and y == storage["y"]:
-                    storage_is_here = True
+            if x == storages["x"] and y == storages["y"]:
+                storage_is_here = True
 
             if player_is_here == True:
-                print("P",end = " ")
+                print("P ",end = " ")
             elif box_is_here == True:
-                print("B",end = " ")
+                print("B ",end = " ")
             elif storage_is_here == True:
-                print("S",end = " ")
+                print("S ",end = " ")
             else :
-                print("-",end = " ")
-    win =True
+                print("- ",end = " ")
+        print() #xuong dong 
+    win = True
     for box in boxes: 
-        if box not in storages : 
+        if box not in storages: 
             win = False 
     
     if win == True : 
