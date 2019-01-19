@@ -32,7 +32,7 @@ if div is not None:
 
 options = {
     'default_search': 'ytsearch', # tell downloader to search instead of directly downloading
-    'max_downloads': 1, # Tell downloader to download only the first entry (audio)
+    'max_downloads': len(song), # Tell downloader to download only the first entry (audio)
     'format': 'bestaudio/audio'
 }
 for i in range(len(song)):
