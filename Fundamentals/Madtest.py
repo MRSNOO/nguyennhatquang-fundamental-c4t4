@@ -27,7 +27,7 @@ while playing :
 
             if player_is_here_doc == True:
                 print("| ",end = " ")
-            elif (enemies_is_here == True and enemie_on_island == 0):
+            elif (enemies_is_here == True):
                 print("E ",end = " ")
             elif island_is_here == True:
                 print("S ",end = " ")
@@ -48,6 +48,7 @@ while playing :
 
     dx = 0
     dy = 0
+    k = 0
     if (move == "a"): 
         dx = dx - 1
     elif (move == "w"):
@@ -61,12 +62,12 @@ while playing :
             for i in range(map["size_x"]):
                 for enemie in enemies:
                     if (i == enemie["x"]) : 
-                        enemie["x"] = player["x"]
-                        enemie["y"] = player["y"]                                                     
+
+                                                 
     else : 
         playing = False 
 
-    xmove = player["x"] + dx 
+    xmove = player["x"] + dx          
     ymove = player["y"] + dy 
 
 
@@ -85,7 +86,7 @@ while playing :
             elif(enemie["y"]<0):
                 enemie["y"] -= 2*dy
             # elif(enemie["x"]==island["x"] and enemie["y"]==island["y"]):
-            #     enemie_on_island = 1
+
 
 
         
