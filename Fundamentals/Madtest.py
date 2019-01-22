@@ -20,7 +20,6 @@ Enemy2Shot = False
 # if statusExplodePlayer == True
     
 while playing :   
-    check = 0
     for y in range (map["size_y"]):
         for x in range(map["size_x"]):
             if x==player["x"] and y == player["y"]:
@@ -109,14 +108,11 @@ while playing :
         statusExplodeEnemy2 = True 
     if (player["x"] == island["x"] and player["y"] == island["y"]):   
         statusExplodePlayer = True  
-    for i in range(map["size_x"]):
-        for j in range(map["size_y"]):
-            if ((i == enemy1["x"] and j == enemy1["y"]) or (i == enemy2["x"] and j == enemy2["y"])):
-                check = check + 1 
-    if check == 0 :
+    
+    if(Enemy1Shot == True and Enemy2Shot == True) or (Enemy1Shot == True and statusExplodeEnemy2 == True)\
+    or (Enemy2Shot == True and statusExplodeEnemy1 == True) or (Enemy2Shot == True and statusExplodeEnemy1 == True) :
         print("You Won")
         break
-    
 
 
         
