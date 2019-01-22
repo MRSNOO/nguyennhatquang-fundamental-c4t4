@@ -17,6 +17,7 @@ soup = BeautifulSoup(text, "html.parser")
 
 #2. Find the ROI (Region of Interest)
 ul_news = soup.find("ul", "ul1 ulnew")
+# tim nhung thang co class = "ul1 ulnew" trong the "ul"
 
 
 #3. Extract Data

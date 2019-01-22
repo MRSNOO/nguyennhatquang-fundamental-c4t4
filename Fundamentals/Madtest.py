@@ -4,36 +4,46 @@ map = {
 
 }
 player = {"x": 1,"y":2}
-enemies = [{"x":3,"y":0},{"x":3,"y":3}]
+# enemies = [{"x":3,"y":0},{"x":3,"y":3}]
+enemy1 = {"x":3,"y":0}
+enemy2 = {"x":3,"y":3}
 island = {"x":2,"y":2}
 playing = True 
-enemie_on_island = 0
-while playing : 
+player_is_here_doc = True
+statusExplodePlayer = False
+statusExplodeEnemy1 = False
+statusExplodeEnemy2 = False
+Enemy1Shot = False
+Enemy2Shot = False
+# if xp == xs and yp == ys:
+#     statusExplodePlayer = True
+# if statusExplodePlayer == True
+    
+while playing :   
+    check = 0
     for y in range (map["size_y"]):
         for x in range(map["size_x"]):
-            
-            player_is_here_doc = False 
             if x==player["x"] and y == player["y"]:
-                player_is_here_doc = True
-
-            enemies_is_here = False 
-            for enemie in enemies :
-                if x == enemie["x"] and y == enemie["y"]:
-                    enemies_is_here = True
+                if (player_is_here_doc == True and statusExplodePlayer == False): #moi thang enemy phai thoa man 2 dieu kien thi moi in ra ko thi sela else roi print ra "x"
+                    print("| ", end=" ")
+                elif (player_is_here_doc == False and statusExplodePlayer == False):
+                    print("- ", end=" ")
+                else:
+                    print("X ",end=" ")
             
-            island_is_here = False
-            if x == island["x"] and y == island["y"]:
-                island_is_here = True
 
-            if player_is_here_doc == True:
-                print("| ",end = " ")
-            elif (enemies_is_here == True):
-                print("E ",end = " ")
-            elif island_is_here == True:
+            elif ((x == enemy1["x"] and y == enemy1["y"] and statusExplodeEnemy1 == False and Enemy1Shot == False) \
+            or (x == enemy2["x"] and y == enemy2["y"] and statusExplodeEnemy2 == False and Enemy2Shot == False)) :
+                    print("E ",end = " ")
+
+            elif x == island["x"] and y == island["y"]:
                 print("S ",end = " ")
             else :
-                print("x ",end = " ")
+                print("X ",end = " ")
+                #shift tab
         print() #xuong dong 
+    
+    
     
     # for box in boxes :
     #     if(box["x"] == 0 and box["y"] == map["size_y"]-1) \
@@ -45,23 +55,33 @@ while playing :
 
     
     move = input("Your next move? A/W/S/D or Fire(F)").lower() 
-
     dx = 0
     dy = 0
-    k = 0
-    if (move == "a"): 
+    if (move == "a"):
         dx = dx - 1
+        player_is_here_doc = False
     elif (move == "w"):
-        dy = dy - 1 
+        dy = dy - 1
+        player_is_here_doc = True
     elif (move == "s"):
-        dy = dy + 1 
+        dy = dy + 1
+        player_is_here_doc = True
     elif (move == "d"):
+        player_is_here_doc = False
         dx = dx + 1 
-    elif (move == "f"):
-        if (player_is_here_doc == True) :
-            for i in range(map["size_x"]):
-                for enemie in enemies:
-                    if (i == enemie["x"]) : 
+    elif (move == "f"): 
+        if player_is_here_doc == True :
+            if (player["y"] == enemy1["y"]) : 
+                Enemy1Shot = True 
+            if (player["y"] == enemy2["y"]) :
+                Enemy2Shot = True  
+        elif player_is_here_doc == False :
+            if (player["x"] == enemy1["x"]) : 
+                Enemy1Shot = True 
+            if (player["x"] == enemy2["x"]) :
+                Enemy2Shot = True          
+
+
 
                                                  
     else : 
@@ -69,24 +89,34 @@ while playing :
 
     xmove = player["x"] + dx          
     ymove = player["y"] + dy 
-
+    enemy1movex = enemy1["x"] + dx
+    enemy1movey = enemy1["y"] + dy
+    enemy2movex = enemy2["x"] + dx
+    enemy2movey = enemy2["y"] + dy
 
     if ((0<= xmove < map["size_x"]) and (0<= ymove <map["size_y"])) : 
         player["x"] += dx 
-        player["y"] += dy 
-        for enemie in enemies:
-            enemie["x"] += dx
-            enemie["y"] += dy
-            if(enemie["x"]>=map["size_x"]):
-                enemie["x"] -= 2*dx
-            elif(enemie["y"]>=map["size_y"]):
-                enemie["y"] -= 2*dy
-            elif(enemie["x"]<0):
-                enemie["x"] -= 2*dx
-            elif(enemie["y"]<0):
-                enemie["y"] -= 2*dy
-            # elif(enemie["x"]==island["x"] and enemie["y"]==island["y"]):
-
+        player["y"] += dy
+    if ((0<= enemy1movex < map["size_x"]) and (0<= enemy1movey <map["size_y"])):      
+        enemy1["x"] += dx
+        enemy1["y"] += dy
+    if ((0<= enemy2movex < map["size_x"]) and (0<= enemy2movey <map["size_y"])): 
+        enemy2["x"] += dx
+        enemy2["y"] += dy
+    if (enemy1["x"] == island["x"] and enemy1["y"] == island["y"]):
+        statusExplodeEnemy1 = True
+    if (enemy2["x"] == island["x"] and enemy2["y"] == island["y"]):
+        statusExplodeEnemy2 = True 
+    if (player["x"] == island["x"] and player["y"] == island["y"]):   
+        statusExplodePlayer = True  
+    for i in range(map["size_x"]):
+        for j in range(map["size_y"]):
+            if ((i == enemy1["x"] and j == enemy1["y"]) or (i == enemy2["x"] and j == enemy2["y"])):
+                check = check + 1 
+    if check == 0 :
+        print("You Won")
+        break
+    
 
 
         
