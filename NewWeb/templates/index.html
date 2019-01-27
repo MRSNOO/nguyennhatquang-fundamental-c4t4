@@ -9,9 +9,10 @@
 </head>
 <body>
     
-    
+
     <div>
         <a href="{{url_for('indextest')}}"><button type="button" class="m-3 btn btn-primary">Create</button></a>
+                <!-- cái nút bấm là sẽ truy cập vào trang indextest-->
     </div>
     <table class="table table-striped">
         <thead>
@@ -26,11 +27,13 @@
           </tr>
         </thead>
         <tbody>
-            {% for person in data %}
-            {% if person.status == True %}
+            {% for person in data %}    <!-- vong for trong html-->
+            <!--data = dataGet_person GET trong app.py, dataGet_person = Person.objects() trong classmodels-->
+            <!-- {% if person.status == True %} if trong html -->
+            <!-- nếu bài của người đó được duyệt -->
           <tr>
-            <th scope="row">{{loop.index}}</th>
-            <td>{{person.name}}</td>
+            <th scope="row">{{loop.index}}</th> <!-- đánh số thứ tự liên tiếp -->
+            <td>{{person.name}}</td>  <!-- lấy trong classModels-->
             <td>{{person.age}}</td>
             <td>{{person.weight}}</td>
             <td>{{person.height}}</td>
@@ -40,7 +43,7 @@
                 <a href="{{url_for('deleteUser', userId = person.id )}}">Delete</a>
             </td>
           </tr>
-            {% endif %}
+            <!-- {% endif %} -->
             {% endfor %}
         </tbody>
       </table>

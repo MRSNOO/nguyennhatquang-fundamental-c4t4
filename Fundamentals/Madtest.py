@@ -54,7 +54,7 @@ while playing :
 
     
     move = input("Your next move? A/W/S/D or Fire(F)").lower() 
-    dx = 0
+    dx = 
     dy = 0
     if (move == "a"):
         dx = dx - 1
@@ -88,10 +88,49 @@ while playing :
 
     xmove = player["x"] + dx          
     ymove = player["y"] + dy 
-    enemy1movex = enemy1["x"] + dx
-    enemy1movey = enemy1["y"] + dy
-    enemy2movex = enemy2["x"] + dx
-    enemy2movey = enemy2["y"] + dy
+# xu ly 1 thang enemy
+    if (player["x"]<enemy1["x"]) :
+        if dx < 0 : 
+            enemy1movex = enemy1["x"] + dx
+        else:
+            enemy1movex = enemy1["x"] - dx 
+    else :
+        if dx < 0:
+            enemy1movex = enemy1["x"] - dx 
+        else:
+            enemy1movex = enemy1["x"] + dx  
+    if (player["y"]<enemy1["y"]) :
+        if dy < 0 : 
+            enemy1movey = enemy1["y"] + dy
+        else:
+            enemy1movey = enemy1["y"] - dy 
+    else :
+        if dy < 0:
+            enemy1movey = enemy1["y"] - dy 
+        else:
+            enemy1movey = enemy1["y"] + dy
+# xu ly thang enemy so 2 
+    if (player["x"]<enemy2["x"]) :
+        if dx < 0 : 
+            enemy2movex = enemy2["x"] + dx
+        else:
+            enemy2movex = enemy2["x"] - dx 
+    else :
+        if dx < 0:
+            enemy2movex = enemy2["x"] - dx 
+        else:
+            enemy2movex = enemy2["x"] + dx  
+    if (player["y"]<enemy2["y"]) :
+        if dy < 0 : 
+            enemy2movey = enemy2["y"] + dy
+        else:
+            enemy2movey = enemy2["y"] - dy 
+    else :
+        if dy < 0:
+            enemy2movey = enemy2["y"] - dy 
+        else:
+            enemy2movey = enemy2["y"] + dy
+
 
     if ((0<= xmove < map["size_x"]) and (0<= ymove <map["size_y"])) : 
         player["x"] += dx 
@@ -110,9 +149,17 @@ while playing :
         statusExplodePlayer = True  
     
     if(Enemy1Shot == True and Enemy2Shot == True) or (Enemy1Shot == True and statusExplodeEnemy2 == True)\
-    or (Enemy2Shot == True and statusExplodeEnemy1 == True) or (Enemy2Shot == True and statusExplodeEnemy1 == True) :
+    or (Enemy2Shot == True and statusExplodeEnemy1 == True) or (statusExplodeEnemy2 == True and statusExplodeEnemy1 == True) :
         print("You Won")
         break
+    if (player["y"] == enemy1["y"] and (move == "a" or move == "d")) or \
+    (player["y"] == enemy2["y"] and (move == "a" or move == "d")) or \
+    (player["x"] == enemy1["x"] and (move == "w" or move == "s")) or \
+    (player["x"] == enemy2["x"] and (move == "w" or move == "s")) or\
+    (statusExplodePlayer == True):
+        print("You lose")
+        break 
+
 
 
         

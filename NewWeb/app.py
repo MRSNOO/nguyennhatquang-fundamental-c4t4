@@ -33,19 +33,20 @@ def indextest():
     #     postNewSchool.save()
     #     dataGet_school = School.objects()
     #     return render_template('result.html', data = dataGet_school)
-    if request.method == "GET":
+    if request.method == "GET": #nhận từ server
         dataGet_person = Person.objects()
         return render_template('indextest.html', data = dataGet_person)
-    elif request.method == "POST":
+    elif request.method == "POST": #post bài lên 
         # lay data sau khi nhap vao o form 
-        form = request.form
-        name = form["name"]
+        form = request.form #lấy cái form từ html của indextest
+        name = form["name"] #lấy dữ liệu người dùng nhập vào 
         age = form["age"]
         height = form["height"]
         weight = form["weight"]
         postNewPerson = Person(name=name, age=age, weight=weight, height=height, status=False)
+        #dùng classModels để lưu lại dữ liệu 
         postNewPerson.save()
-        # lay ra tu database 
+        # cho lên database trên mongoengine
         dataGet_person = Person.objects() 
         # return render_template('result.html', data = dataGet_person)
         return redirect(url_for("index")) #chay method GET cua def index() o ben tren 
