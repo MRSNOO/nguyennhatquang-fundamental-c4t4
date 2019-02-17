@@ -80,9 +80,9 @@ for link in link_list:
     #     div1_1 = pic.img
     #     picture1_1 = div1_1["src"]
 
+print(new_items_eachweb)
 
-
-pyexcel.save_as(records = new_items_eachweb, dest_file_name="treehugger.xlsx")
+# pyexcel.save_as(records = new_items_eachweb, dest_file_name="treehugger.xlsx")
 
 
 
