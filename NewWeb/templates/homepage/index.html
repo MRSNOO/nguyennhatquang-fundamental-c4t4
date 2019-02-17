@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% include 'metadata.html' %}
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <a href="{{url_for('indextest')}}"><button type="button" class="m-3 btn btn-primary">Create</button></a>
+                <!-- cái nút bấm là sẽ truy cập vào trang indextest-->
+        <a href="{{url_for('pending')}}"><button type="button" class="m-3 btn btn-primary">Pending</button></a>
+        <a href="{{url_for('index')}}"><button type="button" class="m-3 btn btn-primary">Home</button></a>
+    </div>
+
+    <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Age</th>
+            <th scope="col">Weight</th>
+            <th scope="col">Height</th>
+            <th scope="col">Actions</th>
+
+          </tr>
+        </thead>
+        <tbody>
+            {% for person in data %}
+            {% if person.status == True %} 
+          <tr>
+            <th scope="row">{{loop.index}}</th> 
+            <td>{{person.name}}</td>  
+            <td>{{person.age}}</td>
+            <td>{{person.weight}}</td>
+            <td>{{person.height}}</td>
+            <td>
+                <a href="{{url_for('editUser', userId = person.id )}}">Edit</a>
+                /
+                <a href="{{url_for('deleteUser', userId = person.id )}}">Delete</a>
+            </td>
+          </tr>
+            {% endif %}
+            {% endfor %}
+        </tbody>
+      </table>
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+</body>
+</html>

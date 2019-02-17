@@ -13,10 +13,21 @@ def abc():
 @app.route('/', methods = ["GET", "POST"])
 def index():
     if request.method == "GET":
-        dataGet_person = Person.objects()   #lay tu database ve 
-        return render_template('index.html', data = dataGet_person)
+        dataGet_person = Person.objects()   #lay tu database ve
+        return render_template('homepage/index.html', data = dataGet_person)
+        
+@app.route('/pending', methods = ["GET", "POST"])
+def pending():
+    if request.method == "GET":
+        dataGet_person = Person.objects()   #lay tu database ve
+        return render_template('homepage/pending.html', data = dataGet_person)
 
-
+@app.route('/duyet/<userId>', methods = ["GET", "POST"])
+def duyet(userId):
+        if request.method == "GET":
+                chooseUser = Person.objects.get(id=userId)
+                chooseUser.update(set__status = True)
+                return redirect(url_for("homepage/pending"))
 
 @app.route('/add',methods = ["GET","POST"])
 def indextest():
@@ -35,7 +46,7 @@ def indextest():
     #     return render_template('result.html', data = dataGet_school)
     if request.method == "GET": #nhận từ server
         dataGet_person = Person.objects()
-        return render_template('indextest.html', data = dataGet_person)
+        return render_template('action/formCreate.html', data = dataGet_person) # 1 list cac data
     elif request.method == "POST": #post bài lên 
         # lay data sau khi nhap vao o form 
         form = request.form #lấy cái form từ html của indextest
@@ -50,16 +61,37 @@ def indextest():
         dataGet_person = Person.objects() 
         # return render_template('result.html', data = dataGet_person)
         return redirect(url_for("index")) #chay method GET cua def index() o ben tren 
+                                                #url for la trỏ đến hàm def 
 
 @app.route('/editUser/<userId>',methods = ["GET","POST"])
 def editUser(userId):
-    return userId
+    if request.method == "GET":
+        userGet = Person.objects.get(id=userId)
+        return render_template("action/formEdit.html", currentUser = userGet) #data cua 1 thang user
+
+    elif request.method == "POST": #post = submit
+        # HTML -> SERVER
+        form = request.form #lấy cái form từ html của indextest
+        name = form["name"] #lấy dữ liệu người dùng nhập vào 
+        age = form["age"]
+        height = form["height"]
+        weight = form["weight"]
+
+        #SERVER -> DATABASE
+        userGet = Person.objects.get(id=userId)
+        userGet.update(set__name = name, set__age = age, set__weight = weight, set__height = height)
+        return redirect(url_for("index"))
 
 @app.route('/deleteUser/<userId>',methods = ["GET","POST"])
 def deleteUser(userId): #userId tu mlab
     userGet = Person.objects.get(id=userId)
     userGet.delete()  #xoa dong vua bam 
     return redirect(url_for("index")) #chay method GET cua def index() o ben tren 
+
+
+
+    
+
 
 if __name__ == '__main__':
   app.run(port=8000, debug=True)
