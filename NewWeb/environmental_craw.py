@@ -82,7 +82,7 @@ for link in link_list:
 
 
 
-pyexcel.save_as(records = new_items, dest_file_name="treehugger.xlsx")
+pyexcel.save_as(records = new_items_eachweb, dest_file_name="treehugger.xlsx")
 
 
 
