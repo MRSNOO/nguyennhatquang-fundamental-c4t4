@@ -9,6 +9,7 @@ text = raw_data.decode("utf-8")    # thu vien
 
 soup = BeautifulSoup(text, "html.parser")
 
+
 cblockcards = soup.find("div","c-block__cards")
 
 article_news = cblockcards.find_all("article","c-article c-article--card")
@@ -57,12 +58,14 @@ for link in link_list:
 	primary_content = soup.find("div","c-article__primary-content")
 	pictures = primary_content.find_all("div","th_img")
 	content = primary_content.find_all("p")
-	
+	#  day cái chỗ này em cóp hết p ra nhưng mà ko biết lưu nnao 
+	#  chọn vào thẻ là đúng rồi hả vâng chị print thử ra xem ạ 
+	# print(content)
 	
 	item_content2 = {
 	"Content":content,
 	"Web Title" : web_title2
-}		
+	}		
 
 
 	new_items_eachweb.append(item_content2)
@@ -82,7 +85,7 @@ for link in link_list:
 
 print(new_items_eachweb)
 
-# pyexcel.save_as(records = new_items_eachweb, dest_file_name="treehugger.xlsx")
+pyexcel.save_as(records = new_items_eachweb, dest_file_name="treehugger.xlsx")
 
 
 
