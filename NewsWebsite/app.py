@@ -1,7 +1,8 @@
-#!/usr/bin/env python
-# -*- coding: utf-8 -*- 
+# -_- python 2.7.15 zz
+# tải python 3.7.0 về cài đi e
+
 from flask import Flask, render_template, request, redirect, url_for
-from abc import printinfo
+from models.classModels import *
 from mlab import *
 connect()
 app = Flask(__name__)
@@ -40,13 +41,13 @@ def duyet(userId):
 
 @app.route('/add',methods = ["GET","POST"])
 def add():
-    if request.method == "GET": #nhận từ server
+    if request.method == "GET": 
         dataGet_post = Post.objects()
         return render_template('action/postCreate.html', data = dataGet_post) # 1 list cac data
-    elif request.method == "POST": #post bài lên 
+    elif request.method == "POST": 
         # lay data sau khi nhap vao o form 
-        form = request.form #lấy cái form từ html của 
-        title = form["title"] #lấy dữ liệu người dùng nhập vào 
+        form = request.form 
+        title = form["title"] 
         author = form["author"]
         picture_link = form["picture_link"]
         content = form["content"]
