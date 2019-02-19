@@ -15,14 +15,15 @@ body {
 #nav_left{
   width: 50%;
   height: 100%;
-  background-color: black;
   display: flex;
-  justify-content: flex-start;
 }
 .nav-item{
   width:20%;
   height: 100%;
-  background-color: red;
+  justify-content: center;
+  border-right:6px;
+  border-color:white;
+  color:white;
 
 }
 
@@ -420,6 +421,7 @@ transition:0.2s linear;
   transform: scale(1.1);
   background-color: rgb(206, 70, 70);
 }
+
 
 
 

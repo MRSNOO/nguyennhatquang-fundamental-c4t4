@@ -1,5 +1,7 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*- 
 from flask import Flask, render_template, request, redirect, url_for
-from models.classModels import *
+from abc import printinfo
 from mlab import *
 connect()
 app = Flask(__name__)
