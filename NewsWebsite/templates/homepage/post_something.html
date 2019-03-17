@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="../../static/homepage.css">
+  <link rel="stylesheet" href="../../static/darkcode.css">
+  <link rel="stylesheet" href="../../static/header.css">
+  <link rel="stylesheet" href="../../static/nav.css">
+  <link rel="stylesheet" href="../../static/first_tab.css">
+  <link rel="stylesheet" href="../../static/left_content.css">
+  <link rel="stylesheet" href="../../static/right_content.css">
+  <link rel="stylesheet" href="../../static/carousel.css">
+  <link rel="stylesheet" href="../../static/footer.css">
+
+
+
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
+  {% include 'metadata.html' %}
+
+
+</head>
+
+<body>
+
+  <div id="header">
+    <div id="header_left">
+      <span class="text_style">Welcome to Cleen Website</span>
+    </div>
+    <div id="header_right">
+      <div class="login text_style">Log in</div>
+      <div class="login text_style">Sign Up</div>
+
+    </div>
+  </div>
+
+
+
+
+  <div id="banner">
+    <span class="text_style">CLEEN NEWS</span>
+  </div>
+
+  <div id="navbar">
+    <div id="nav_left">
+      <div class="nav-item text_style">HOME</div>
+      <div class="nav-item text_style">ABOUT US</div>
+      <div class="nav-item text_style">PROJECTS</div>
+      <div class="nav-item text_style">NEWS</div>
+      <div class="nav-item text_style">CONTACT</div>
+    </div>
+    <div id="nav_right">
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+
+
+  <div id="carousel">
+    <div id="carouselExampleControls" class="carousel slide slideWidth" data-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="https://www.sprep.org/sites/default/files/images/slideshow/GondwanaAA%20-%20optimized_0.jpg"
+            class="d-block w-100" alt="...">
+          <div class="carousel_content text_style">
+            <h3>THE ENVIRONMENT IS IN DANGER. <br>
+              WANT TO LEARN MORE?</h3>
+            <h5 id="carousel_readmore">Read More</h5>
+
+          </div>
+
+          <!-- </div>
+        <div class="carousel-item">
+          <img src="https://www.sprep.org/sites/default/files/images/slideshow/GondwanaAA%20-%20optimized_0.jpg"
+            class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="https://www.sprep.org/sites/default/files/images/slideshow/GondwanaAA%20-%20optimized_0.jpg"
+            class="d-block w-100" alt="...">
+        </div> -->
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+    </div>
+
+    <div id="content">
+      <div id="left">
+        <div id="first_tab">
+          <div id="pull_left">
+            <span class="text_style">Environment</span>
+          </div>
+          <div id="pull_right">
+            <div class="top_small all text_style">All</div>
+            <div class="top_small text_style">Spotlight</div>
+            <div class="top_small text_style">Animal</div>
+            <div class="top_small text_style">Ocean</div>
+            <div class="top_small text_style">Forest</div>
+            <div class="top_small text_style">Technology</div>
+
+          </div>
+        </div>
+        <div id="content_place">
+          
+        </div>
+
+      </div>
+
+      <div id="right">
+        <div id="top_right">
+          <div id="row1">
+            <div class="container">
+              <span class="btn btn1">Follow us</span>
+            </div>
+            <div class="empty"></div>
+          </div>
+
+
+          <div id="row2">
+            <div class="middle">
+              <a class="btn_a" href="#">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a class="btn_a" href="#">
+                <i class="fab fa-twitter"></i>
+              </a>
+              <a class="btn_a" href="#">
+                <i class="fab fa-google"></i>
+              </a>
+              <a class="btn_a" href="#">
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a class="btn_a" href="#">
+                <i class="fab fa-youtube"></i>
+              </a>
+            </div>
+          </div>
+
+          <div id="row3">
+            <span class="btn text_style">ENVIRONMENT EVENT</span>
+          </div>
+
+          <div id="row4">
+            <span class="btn text_style">COOPERATION</span>
+          </div>
+        </div>
+
+        <div class="post_news text_style">
+          <div id="post_click">POST SOMETHING</div>
+          <img class="img"
+            src="https://i0.wp.com/www.eyehealthnepal.com/wp-content/uploads/2019/01/submit-your-article-eye-health-nepal.jpg?resize=800%2C500&ssl=1"
+            alt="">
+        </div>
+
+        <div id="ads">
+          <img class="img" src="https://themerex.net/wp-content/uploads/edd/2018/04/greenrescues-2.png" alt="">
+          <div class="textbox">
+            <h5>Read More</h5>
+          </div>
+        </div>
+
+        <div id="list_news">
+          <div id="top_list">
+            <div class="tab1 popular text_style"><span>Popular</span></div>
+            <div class="tab1 text_style"><span>Recent</span></div>
+            <div class="tab1 text_style"><span>Comment</span></div>
+          </div>
+          <div id="list_content">
+            <div class="list_items">
+              <div id="list_items_left">
+                <img class="img"
+                  src="https://media.treehugger.com/assets/images/2013/02/red-footed-tortoise1.jpeg.110x90_q70_crop-smart.jpg"
+                  alt="">
+              </div>
+              <div id="list_items_right">
+                <span class="text_style hot_text"> Family cleans house, finds pet tortoise missing since 1982</span>
+              </div>
+            </div>
+
+            <div class="list_items">
+              <div id="list_items_left">
+                <img class="img"
+                  src="https://media.treehugger.com/assets/images/2013/02/red-footed-tortoise1.jpeg.110x90_q70_crop-smart.jpg"
+                  alt="">
+              </div>
+              <div id="list_items_right">
+                <span class="text_style hot_text"> Family cleans house, finds pet tortoise missing since 1982</span>
+              </div>
+            </div>
+
+
+            <div class="list_items">
+              <div id="list_items_left">
+                <img class="img"
+                  src="https://media.treehugger.com/assets/images/2013/02/red-footed-tortoise1.jpeg.110x90_q70_crop-smart.jpg"
+                  alt="">
+              </div>
+              <div id="list_items_right">
+                <span class="text_style hot_text"> Family cleans house, finds pet tortoise missing since 1982</span>
+              </div>
+            </div>
+
+
+            <div class="list_items">
+              <div id="list_items_left">
+                <img class="img"
+                  src="https://media.treehugger.com/assets/images/2013/02/red-footed-tortoise1.jpeg.110x90_q70_crop-smart.jpg"
+                  alt="">
+              </div>
+              <div id="list_items_right">
+                <span class="text_style hot_text"> Family cleans house, finds pet tortoise missing since 1982</span>
+              </div>
+            </div>
+
+
+
+            <div class="list_items">
+              <div id="list_items_left">
+                <img class="img"
+                  src="https://media.treehugger.com/assets/images/2013/02/red-footed-tortoise1.jpeg.110x90_q70_crop-smart.jpg"
+                  alt="">
+              </div>
+              <div id="list_items_right">
+                <span class="text_style hot_text"> Family cleans house, finds pet tortoise missing since 1982</span>
+              </div>
+            </div>
+
+
+
+            <div class="list_items">
+              <div id="list_items_left">
+                <img class="img"
+                  src="https://media.treehugger.com/assets/images/2013/02/red-footed-tortoise1.jpeg.110x90_q70_crop-smart.jpg"
+                  alt="">
+              </div>
+              <div id="list_items_right">
+                <span class="text_style hot_text"> Family cleans house, finds pet tortoise missing since 1982</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  </div>
+  </div>
+
+  <!-- icon o font awesome -->
+  <div id="footer">
+    <div id="left_footer">
+      <ul class="info">
+        <li class="big_text li text_style">CONTACT INFO</li>
+        <li class="li">
+          <i class="icon fas fa-map-marker-alt"></i>
+          <span class="address small_text text_style">Address:Tầng 6 22 Thành Công quận Ba Đình, Hà Nội</span>
+        </li>
+        <li class="li">
+          <i class="icon fas fa-mobile-alt"></i>
+          <span class="phone small_text text_style">Phone:+84 986140102</span>
+        </li>
+        <li class="li">
+          <i class="icon far fa-envelope"></i>
+          <span class="mail small_text text_style">Mail:nnquang.1412@gmail.com</span>
+        </li>
+        <li class="li">
+          <i class="icon fab fa-facebook-f"></i>
+          <span class="facebook small_text text_style">Facebook:</span>
+        </li>
+      </ul>
+      <div id="social_button">
+        <i class="fab fa-twitter fab1"></i>
+        <i class="fab fa-facebook fab1"></i>
+        <i class="fab fa-instagram fab1"></i>
+        <i class="fab fa-google fab1"></i>
+      </div>
+    </div>
+    <div id="right_footer">
+      <span class="big_text text_style">HELP US PROTECT THE ENVIRONMENT</span>
+      <div class="signup_button text_style">Sign Up</div>
+      <div class="smalltext text_style">Sign Up and join us to do amazing projects and save the environment</div>
+    </div>
+  </div>
+  <script src="https://cdn.ckeditor.com/ckeditor5/<version>/classic/ckeditor.js"></script>
+  <script src="../../static/javascript/main.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>

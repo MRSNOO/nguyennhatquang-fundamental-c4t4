@@ -1,0 +1,168 @@
+
+#row1{
+  width: 100%;
+  height: 40px;
+  display: flex;
+  justify-content: flex-start;
+  background-color: white;
+}
+.container{
+  width: 20%;
+  height: 100%;
+  display: flex;
+  background-color: #FB005F;
+
+}
+.empty{
+  width: 900px;
+  height: 100%;
+  background-color: #e6e6e6;
+
+}
+.btn{
+  color:white;
+}
+#row2{
+  width: 100%;
+  height: 70px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.social_button{
+  width: 50px;
+  padding:10px;
+  height: 70px;
+  background-color: blueviolet;
+}
+#top_right{
+  width: 100%;
+  height: 350px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+#row3{
+  width: 100%;
+  height: 70px;
+  display: flex;
+  justify-content: space-around;
+  background-color: #FB005F;
+  align-items: center;
+}
+
+
+#row4{
+  width: 100%;
+  height: 70px;
+  display: flex;
+  justify-content: space-around;
+  background-color: #FB005F;
+  align-items: center;
+  border:0.5px solid #FB005F;
+  margin-bottom:25px;
+
+}
+#ads{
+  width: 100%;
+  height: 450px;
+  margin-top:50px;
+  position:relative;
+}
+.textbox{
+  position: absolute;
+  bottom:60px;
+  right:120px;
+  background-color: black;
+  padding:4px;
+  color:white;
+  justify-content: center;
+  align-items: center;
+
+}
+.textbox:hover{
+  background-color: #FB005F;
+}
+.post-news{
+  width: 100%;
+  height: 450px;
+}
+#post_click{
+  width: 100%;
+  height: 70px;
+  display: flex;
+  justify-content: space-around;
+  background-color: #FB005F;
+  align-items: center;
+  border:0.5px solid #FB005F;
+  color:white;
+}
+#post_click>a:link{
+  color:white;
+  text-decoration: none;
+}
+
+.img{
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+#top_list{
+  width: 100%;
+  height: 40px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  border: 1px solid #e6e6e6;
+}
+.tab1{
+  width: 33.3%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #777777;
+  /* chinh lai color thanh grey */
+  border-right:1px solid #e6e6e6;
+}
+.tab1:hover{
+  background-color: #FB005F;
+  color:white;
+
+}
+.popular{
+  background-color: #FB005F;
+  color:white;
+}
+#list_content{
+  width: 100%;
+  height: 700px;
+  display: flex;
+  flex-direction: column;
+}
+.list_items{
+  width: 100%;
+  height: 100px;
+  margin-top:20px;
+  display: flex;
+  flex-direction: row;
+  border-bottom:1px solid #bfbfbf;
+}
+#list_items_left{
+  width: 30%;
+  height: 80%;
+}
+#list_items_right{
+  width: 70%;
+  height: 80%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.hot_text{
+  margin-left:20px;
+}
+
+
